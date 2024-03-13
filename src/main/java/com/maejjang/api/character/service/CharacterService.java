@@ -1,21 +1,17 @@
 package com.maejjang.api.character.service;
 
-import com.maejjang.api.character.dto.CharacterBasicDto;
 import com.maejjang.api.character.dto.CharacterDto;
 import com.maejjang.api.character.feign.CharacterFeign;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CharacterService implements CharacterFeign {
+@RequiredArgsConstructor
+public class CharacterService {
 
-    @Override
-    public CharacterDto getCharacterOcid(String apiKey, String characterName) {
-        return null;
-    }
+    private final CharacterFeign characterFeign;
 
-    @Override
-    public CharacterBasicDto getCharacterBasic(String apiKey, String ocid, String date) {
-        return null;
+    public CharacterDto getCharacterOcid(String name) {
+        return characterFeign.getCharacterOcid(name);
     }
 }

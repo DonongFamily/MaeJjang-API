@@ -8,6 +8,9 @@ spring:
     redis:
       host: localhost
       port: 6379
+  #Api Key 분리
+  profiles:
+    include: api
 
 #MyBatis
 mybatis:
@@ -20,4 +23,8 @@ maple:
   api:
     uri:
       id:
-      character: /maplestory/v1
+      character: https://open.api.nexon.com/maplestory/v1
+
+logging:
+  level:
+    com.netflix.feign.Feign: DEBUG
