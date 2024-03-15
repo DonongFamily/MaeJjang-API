@@ -1,12 +1,7 @@
 spring:
-  datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/maejjang
-    username: root
-    password: 1234
-  #Api Key 분리
   profiles:
-    include: api,oauth
+    include: secret
+    active: loc
 
 #MyBatis
 mybatis:
@@ -20,7 +15,5 @@ maple:
     uri:
       id:
       character: https://open.api.nexon.com/maplestory/v1
-
 server:
-  url: http://localhost:8090
   port: 8090

@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:5432/maejjang
+    username: postgres
+    password: 1234
+
+server:
+  domain: http://localhost:${server.port}

@@ -19,7 +19,7 @@ public class LoginController {
     private String googleClientId;
     @Value("${google.client.pw}")
     private String googleClientPw;
-    @Value("${server.url}")
+    @Value("${server.domain}")
     private String redirectUri;
 
     @PostMapping("/api/v1/oauth2/google")
