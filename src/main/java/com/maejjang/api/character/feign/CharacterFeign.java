@@ -2,12 +2,12 @@ package com.maejjang.api.character.feign;
 
 import com.maejjang.api.character.dto.CharacterBasicDto;
 import com.maejjang.api.character.dto.CharacterDto;
-import com.maejjang.api.config.feign.FeignHeaderConfiguration;
+import com.maejjang.api.config.feign.FeignMapleHeaderConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "CharacterFeign", url = "${maple.api.uri.character}", configuration = {FeignHeaderConfiguration.class})
+@FeignClient(name = "CharacterFeign", url = "${maple.api.uri.character}", configuration = {FeignMapleHeaderConfiguration.class})
 public interface CharacterFeign {
 
     /**

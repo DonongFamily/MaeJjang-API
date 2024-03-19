@@ -6,4 +6,9 @@ spring:
     password: 1234
 
 server:
-  domain: http://localhost:${server.port}
+  baseUrl: http://localhost:${server.port}
+
+logging:
+  level:
+    root: debug
+    'com.maejjang.api': debug

@@ -1,4 +1,4 @@
-package com.maejjang.api.login.dto;
+package com.maejjang.api.login.dto.sns.google;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -32,6 +32,8 @@ dependencies {
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.0.3'   //feign 사용
+    // Feign Jackson 라이브러리
+    implementation 'io.github.openfeign:feign-jackson:10.7.4'
 }
 
 tasks.named('test') {

@@ -13,7 +13,25 @@ mybatis:
 maple:
   api:
     uri:
-      id:
       character: https://open.api.nexon.com/maplestory/v1
+
+sns:
+  google:
+    loginUrl: https://accounts.google.com/o/oauth2/v2/auth
+    tokenUrl: https://oauth2.googleapis.com
+    redirectUrl: ${server.baseUrl}/sns/api/v1/oauth2/google
+    authorization-grant-type: authorization_code
+    scope: name, email, profile_image
+    access_type: offline
+  naver:
+    loginUrl: https://nid.naver.com/oauth2.0/authorize
+    tokenUrl: https://nid.naver.com/oauth2.0/token
+    userInfoUrl: https://openapi.naver.com/v1/nid/me
+    redirectUrl: ${server.baseUrl}/sns/api/v1/oauth2/naver
+    authorization-grant-type: authorization_code
+
+
+#  spring.security.oauth2.provider.naver.user-name-attribute=response
+
 server:
   port: 8090
