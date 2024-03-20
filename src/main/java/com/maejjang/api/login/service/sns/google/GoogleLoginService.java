@@ -39,7 +39,6 @@ public class GoogleLoginService implements SnsLoginService {
 
     @Override
     public String loginUrl() {
-        //todo: scope 문제 해결 -> ,로 되어있음 -> %20으로 변경해야함
         return UriComponentsBuilder
                 .fromHttpUrl(loginUrl)
                 .queryParam("client_id", googleClientId)
