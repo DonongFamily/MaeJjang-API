@@ -6,7 +6,7 @@ import lombok.Getter;
 public class NaverUserInfo {
     private String email;
     private String nickname;
-    private String profile_image;
+    private String profileImage;
     private String age;
     private String gender;
     private String id;

@@ -20,8 +20,8 @@ public class FeignClientLogConfiguration {
 
         @Override
         public void apply(RequestTemplate template) {
-            if (log.isDebugEnabled()) {
-                log.debug("Feign Request: {}", template.toString());
+            if (log.isInfoEnabled()) {
+                log.info("Feign Request: {}", template.toString());
             }
         }
     }

@@ -12,14 +12,11 @@ public class SnsLoginFactory {
     private final GoogleLoginService googleLoginService;
     private final NaverLoginService naverLoginService;
 
-    public SnsLoginService getSnsLoginService(String type) {
-
-        //type 체크해야함
-
+    public SnsLoginService getSnsLoginService(SnsType type) {
         switch (type){
-            case "google":
+            case GOOGLE:
                 return googleLoginService;
-            case "naver":
+            case NAVER:
                 return naverLoginService;
             default:
                 throw new IllegalArgumentException("SnsFactory Service 생성 에러");

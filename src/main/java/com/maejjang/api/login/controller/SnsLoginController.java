@@ -2,11 +2,11 @@ package com.maejjang.api.login.controller;
 
 import com.maejjang.api.login.service.sns.SnsLoginFactory;
 import com.maejjang.api.login.service.sns.SnsLoginService;
+import com.maejjang.api.login.service.sns.SnsType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-//@CrossOrigin("*")
 @RequestMapping("/sns")
 @RequiredArgsConstructor
 public class SnsLoginController {
@@ -18,14 +18,14 @@ public class SnsLoginController {
      */
     @PostMapping("/api/v1/oauth2/{type}")
     public String loginUrl(@PathVariable String type){
-        SnsLoginService snsLoginService = snsLoginFactory.getSnsLoginService(type);
+        SnsLoginService snsLoginService = snsLoginFactory.getSnsLoginService(SnsType.of(type));
         return snsLoginService.loginUrl();
     }
 
     @GetMapping("/api/v1/oauth2/{type}")
     public String login(@PathVariable String type,
                         @RequestParam("code") String authCode) {
-        SnsLoginService snsLoginService = snsLoginFactory.getSnsLoginService(type);
+        SnsLoginService snsLoginService = snsLoginFactory.getSnsLoginService(SnsType.of(type));
         return snsLoginService.login(authCode);
     }
 }

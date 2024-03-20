@@ -10,9 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Service
 @RequiredArgsConstructor
 public class GoogleLoginService implements SnsLoginService {
@@ -64,12 +61,8 @@ public class GoogleLoginService implements SnsLoginService {
                 .grantType(grantType).build();
 
         GoogleResponse googleResponse = googleLoginFeign.getToken(googleOAuthRequestParam);
-        String jwtToken = googleResponse.getId_token();
 
-        Map<String, String> map = new HashMap<>();
-        map.put("id_token", jwtToken);
-
-        GoogleInfResponse tokenInfo = googleLoginFeign.getUserInfo(map);
+        GoogleInfResponse tokenInfo = googleLoginFeign.getUserInfo(googleResponse.getIdToken());
         //todo: email 정보 DB에서 조회 후 있으면 로그인 처리, 없으면 회원가입처리
 
         return tokenInfo.getEmail();

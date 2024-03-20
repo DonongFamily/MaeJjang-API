@@ -47,14 +47,14 @@ public class NaverLoginService implements SnsLoginService {
     public String login(String authCode) {
         NaverRequest naverOAuthRequestParam = NaverRequest
                 .builder()
-                .grant_type(grantType)
-                .client_id(naverClientId)
-                .client_secret(naverClientPw)
+                .grantType(grantType)
+                .clientId(naverClientId)
+                .clientSecret(naverClientPw)
                 .code(authCode)
                 .build();
         NaverResponse naverResponse = naverTokenFeign.getToken(naverOAuthRequestParam);
 
-        String accessToken = naverResponse.getToken_type() + " " + naverResponse.getAccess_token();
+        String accessToken = naverResponse.getTokenType() + " " + naverResponse.getAccessToken();
         NaverInfResponse userInfo = naverLoginFeign.getUserInfo(accessToken);
         //todo: email 정보 DB에서 조회 후 있으면 로그인 처리, 없으면 회원가입처리
 

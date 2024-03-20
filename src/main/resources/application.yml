@@ -21,7 +21,7 @@ sns:
     tokenUrl: https://oauth2.googleapis.com
     redirectUrl: ${server.baseUrl}/sns/api/v1/oauth2/google
     authorization-grant-type: authorization_code
-    scope: name, email, profile_image
+    scope: email profile openid
     access_type: offline
   naver:
     loginUrl: https://nid.naver.com/oauth2.0/authorize

@@ -2,7 +2,6 @@ package com.maejjang.api.login.feign.sns.naver;
 
 import com.maejjang.api.login.dto.sns.naver.NaverInfResponse;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 
