@@ -25,7 +25,8 @@ public class FeignUrlEncodedSnakeConfig {
         return new SnakeCaseFormEncoder();
     }
 
-    @Bean Decoder feignFormDecoder() {
+    @Bean
+    public Decoder feignFormDecoder() {
         return new SnakeCaseDecoder();
     }
 
